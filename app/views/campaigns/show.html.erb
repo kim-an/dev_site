@@ -1,0 +1,31 @@
+<h2><%= @campaign.campaign_name %></h2>
+<p><%= @campaign.launch_date %></p>
+
+<%= link_to "Create Ad", new_campaign_ad_path(@campaign) %><br>
+
+
+<% @ads.each do |ad| %>
+    <tr>
+      <td><%= link_to ad.html_file, campaign_ad_path(@campaign, ad) %></td>
+      <td><%= ad.width %></td>
+      <td><%= ad.height %></td>
+      <td><%= link_to "Delete", campaign_path(@campaign, ad),
+        method: :delete,
+        data: { confirm: "Are you sure you want to delete ad? "} %></td>
+    </tr>
+<% end %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      Html File
+    </div>
+    <div class="col-sm-4">
+      Width
+    </div>
+    <div class="col-sm-4">
+      Height
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Edit Client</h1>
+<%= form_for @client do |f| %>
+<% if @client.errors.any? %>
+<div class="error_message">
+  <h2>Form is invalid</h2>
+  <ul>
+    <% for message in @client.errors.full_messages %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :business_name %>
+  <%= f.text_field :business_name %>
+</div>
+
+<div class="field">
+  <%= f.label :point_of_contact %>
+  <%= f.text_field :point_of_contact %>
+</div>
+
+<div class="field" >
+  <%= f.label :pasword %>
+  <%= f.password_field :password %>
+</div>
+
+<div class="field">
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+</div>
+
+<div class="actions"><%= f.submit %></div>
+
+<%= link_to "Back", clients_path %>
+
+
+<% end %>

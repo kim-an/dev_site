@@ -1,0 +1,32 @@
+<h1>Client: <%= @client.business_name %></h1>
+<h2>Point of Contact: <%= @client.point_of_contact %></h2>
+
+<h3>Campaigns</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Campaign Name</th>
+      <th>Launch Date</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @campaigns.each do |campaign| %>
+    <tr>
+    <td><%= link_to campaign.campaign_name, campaign_path(campaign.id) %><td>
+    <td><%= campaign.launch_date %></td>
+  <% if current_user && is_agency? %>
+    <td><%= link_to "Edit", edit_client_campaign_path(@client, campaign.id) %></td>
+    <td><%= link_to "Delete", client_campaign_path(@client, campaign.id),
+     method: :delete, class: "btn btn-danger",
+     data: { confirm: "Are you sure you want to delete #{campaign.campaign_name}? "} %></td>
+    <td><%= link_to "Back", clients_path %></td>
+    <td><%= link_to "Create New Campaign", new_client_campaign_path(@client) %></td>
+
+  <% else %>
+    <td><%= link_to "Back", clients_path %></td>
+  <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

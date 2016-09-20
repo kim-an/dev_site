@@ -1,0 +1,21 @@
+<h1>Campaigns</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Campaign Name</th>
+      <th>Launch Date</th>
+    </tr>
+  </thead>
+  <% @campaigns.each do |campaign| %>
+  <tbody>
+    <td><%= link_to campaign.campaign_name, campaign_path(campaign.id) %><td>
+    <td><%= campaign.launch_date %></td>
+  <% end %>
+  </tbody>
+</table>
+
+<% if current_user && is_agency? %>
+  <%= link_to 'Create New Campaign', new_campaign_path %>
+<% else %>
+  <%= link_to 'Back', welcome_index_path %>
+<% end %>

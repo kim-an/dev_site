@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Create New Campaign</h1>
+<%= form_for [@client, @campaign] do |f| %>
+<% if @campaign.errors.any? %>
+<div class="error_message">
+  <h2>Form is invalid</h2>
+  <ul>
+    <% for message in @campaign.errors.full_messages %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :campaign_name %>
+  <%= f.text_field :campaign_name %>
+</div>
+
+<div class="field">
+  <%= f.label :launch_date %>
+  <%= f.text_field :launch_date %>
+</div>
+
+
+<div class="actions"><%= f.submit %></div>
+
+<% end %>
