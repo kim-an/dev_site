@@ -4,6 +4,7 @@ class CampaignsController < ApplicationController
     @campaigns = current_user.campaigns
   end
 
+
   def show
     @campaign = Campaign.find(params[:id])
     @client   = @campaign.client
@@ -18,7 +19,10 @@ class CampaignsController < ApplicationController
 
   def create
     @client   = Client.find(params[:client_id])
-    @campaign = @client.campaigns.new(campaign_params)
+    @campaign = Campaign.new
+    @campaign.client = @client
+    @campaign.launch_date = DateTime.strptime(params[:campaign][:launch_date], "%m/%d/%Y")
+    @campaign.campaign_name = params[:campaign][:campaign_name]
     if @campaign.save
       redirect_to client_path(params[:client_id])
     else
@@ -32,6 +36,7 @@ class CampaignsController < ApplicationController
 
   def update
     @campaign = Campaign.find(params[:id])
+    params[:campaign][:launch_date] = DateTime.strptime(params[:campaign][:launch_date], "%m/%d/%Y")
     if @campaign.update_attributes(campaign_params)
       redirect_to client_path(@campaign.client_id)
     else
@@ -42,7 +47,7 @@ class CampaignsController < ApplicationController
   def destroy
     @campaign = Campaign.find(params[:id])
     @campaign.destroy
-    redirect_to campaigns_path
+    redirect_to client_path(params[:client_id])
   end
 
 private
