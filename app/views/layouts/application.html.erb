@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -15,6 +16,7 @@
 
 <!-- Fixed navbar -->
 
+<% if !current_user %>
 <nav id="header" class="navbar navbar-fixed-top">
     <div id="header-container" class="container navbar-container">
         <div class="navbar-header">
@@ -24,11 +26,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a id="brand" class="navbar-brand" href="#">40K Studios</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="#welcome">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <% if current_user %>
@@ -42,8 +43,7 @@
 </nav><!-- /.navbar -->
 <!-- check to see whether user is a client or agency -->
 <!-- nav bar for client view -->
-<% if current_user && is_client? %>
-  <p>Welcome, <%= current_user.business_name %> - you're a client!</p>
+<% elsif current_user && is_client? %>
 <nav id="header" class="navbar navbar-fixed-top">
     <div id="header-container" class="container navbar-container">
         <div class="navbar-header">
@@ -64,6 +64,7 @@
         </div><!-- /.nav-collapse -->
     </div><!-- /.container -->
 </nav><!-- /.navbar -->
+  <p>Welcome, <%= current_user.business_name %>!</p>
 
 <!-- navbar for agency view -->
 <% elsif current_user && is_agency? %>
@@ -89,7 +90,7 @@
     </div><!-- /.container -->
 </nav><!-- /.navbar -->
 
-  <p>Welcome, <%= current_user.business_name %> - you're an agency!</p>
+<div><p>Welcome, <%= current_user.business_name %>!</p></div>
 <% else %>
 
   <!-- <nav>You're not logged in</nav> -->

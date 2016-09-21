@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
+//= require bootstrap
 //= require_tree .
 
 // function to create scrolling nav bar (click nav bar and scrolls down)

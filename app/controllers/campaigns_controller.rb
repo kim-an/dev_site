@@ -1,7 +1,7 @@
 class CampaignsController < ApplicationController
 
   def index
-    @campaigns = Campaign.all
+    @campaigns = current_user.campaigns
   end
 
   def show
@@ -27,7 +27,7 @@ class CampaignsController < ApplicationController
   end
 
   def edit
-    @campaign = Campaign.find(params[:client_id])
+    @campaign = Campaign.find(params[:id])
   end
 
   def update

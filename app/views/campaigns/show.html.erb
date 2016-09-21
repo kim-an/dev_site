@@ -3,29 +3,33 @@
 
 <%= link_to "Create Ad", new_campaign_ad_path(@campaign) %><br>
 
-
-<% @ads.each do |ad| %>
-    <tr>
-      <td><%= link_to ad.html_file, campaign_ad_path(@campaign, ad) %></td>
-      <td><%= ad.width %></td>
-      <td><%= ad.height %></td>
-      <td><%= link_to "Delete", campaign_path(@campaign, ad),
-        method: :delete,
-        data: { confirm: "Are you sure you want to delete ad? "} %></td>
-    </tr>
-<% end %>
-
-
 <div class="container">
-  <div class="row">
+  <div class="row-fluid">
     <div class="col-sm-4">
       Html File
     </div>
     <div class="col-sm-4">
-      Width
+      Size
+    </div>
+    <div class="col-sm-4">Tools</div>
+  </div>
+<% @ads.each do |ad| %>
+  <div class="row-fluid">
+    <div class="col-sm-4">
+      <%= link_to ad.html_file, campaign_ad_path(@campaign, ad) %>
     </div>
     <div class="col-sm-4">
-      Height
+      <%= ad.width %>x<%= ad.height %>
     </div>
+  <% if current_user && is_agency? %>
+    <div class="col-sm-4">
+      <%= link_to "Delete", campaign_path(@campaign, ad),
+        method: :delete,
+        data: { confirm: "Are you sure you want to delete ad? "} %>
+    </div>
+  <% else %>
+  <div class="col-sm-4" colspan="6"></div>
   </div>
+  <% end %>
+<% end %>
 </div>

@@ -1,20 +1,28 @@
 <h1>Clients</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Client Name</th>
-      <th>Point of Contact</th>
-    </tr>
-  </thead>
-  <% @clients.each do |client| %>
-  <tbody>
-    <td><%= link_to client.business_name, client_path(client.id) %><td>
-    <td><%= client.point_of_contact %></td>
-    <td><%= link_to "Edit", edit_client_path(client.id) %></td>
-    <td><%= link_to "Delete", client_path(client.id), method: :delete,
-     data: {confirm: " Are you sure you want to delete #{client.business_name}?"} %></td>
-  <% end %>
-  </tbody>
-</table>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">Client</div>
+    <div class="col-sm-4">Point of Contact</div>
+    <div class="col-sm-4">Tools</div>
+  </div>
+</div>
+<% @clients.each do |client| %>
+  <div class="row">
+    <div class="col-sm-4">
+      <%= link_to client.business_name, client_path(client.id) %>
+    </div>
+    <div class="col-sm-4">
+      <%= client.point_of_contact %>
+    </div>
+    <div class="col-sm-4">
+      <%= link_to "Edit", edit_client_path(client.id) %>
+      <%= link_to "Delete", client_path(client.id), method: :delete,
+     data: {confirm: " Are you sure you want to delete #{client.business_name}?"} %>
+    </div>
+  </div>
+
+<% end %>
+
 <%= link_to 'Create New Client', new_client_path %>
 
