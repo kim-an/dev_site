@@ -22,7 +22,7 @@ a2 = Agency.create ({
 
 c1 = Client.create ({
   business_name: 'MVNP',
-  point_of_contact: 'Kevin Wee',
+  point_of_contact: 'Kevin Smith',
   password: '12345',
   password_confirmation: '12345',
   agency: a1
@@ -30,7 +30,7 @@ c1 = Client.create ({
 
 c2 = Client.create ({
   business_name: 'WallToWall',
-  point_of_contact: 'Jen Tanabe',
+  point_of_contact: 'Jen Doe',
   password: 'abcde',
   password_confirmation: 'abcde',
   agency: a2

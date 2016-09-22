@@ -12,7 +12,8 @@ The agency will be able to assign each client a username and password.
 If a client has forgotten their username/password, the agency can log-in
 and assign a new username/password with the edit/update function.
 Each client will only be able to see campaigns/advertisements that
-are applicable to their own company.
+are applicable to their own company.  Animated ads are able to shown using
+iFrame tag.
 
 The agency will be able to log in, create new clients, add campaigns
 to each client and upload advertisements done for each campaign.
@@ -26,39 +27,12 @@ Future want to haves:
 * list clients in alphabetical order
 
 Bugs:
+* sometimes launch date of a campaign doesn't save
 
 
 
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-Keldon Ancheta:
+////////////links for demo///////////
   http://40kstudios.com/clients/SixSpeed/POL8350/staging_101/
   http://40kstudios.com/clients/WalltoWall/OUT3667/staging_101/index.html
   http://40kstudios.com/clients/WalltoWall/OUT_3645_Kamaaina/staging_101/index.html
