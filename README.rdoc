@@ -1,3 +1,34 @@
+
+##Project 2 Using Ruby on Rails
+========================================================================
+* Rails version:             4.2.7
+* Ruby version:              2.2.3-p173 (x86_64-darwin14)
+* RubyGems version:          2.4.5.1
+
+This web app was designed for a digitial ad agency to present their
+work to their different clients.
+
+The agency will be able to assign each client a username and password.
+If a client has forgotten their username/password, the agency can log-in
+and assign a new username/password with the edit/update function.
+Each client will only be able to see campaigns/advertisements that
+are applicable to their own company.
+
+The agency will be able to log in, create new clients, add campaigns
+to each client and upload advertisements done for each campaign.
+
+
+Future want to haves:
+* client will be able to approve/request changes to ads
+* agency/client would be alerted by email when new ads are up or when changes are requested/have been made
+* agency will be able to have more functionality
+* ad index - change the clickable link to size and have it redirect to html page
+* list clients in alphabetical order
+
+Bugs:
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
@@ -26,3 +57,22 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+Keldon Ancheta:
+  http://40kstudios.com/clients/SixSpeed/POL8350/staging_101/
+  http://40kstudios.com/clients/WalltoWall/OUT3667/staging_101/index.html
+  http://40kstudios.com/clients/WalltoWall/OUT_3645_Kamaaina/staging_101/index.html
+  http://40kstudios.com/clients/WalltoWall/OUT_3645_Global/staging_101/index.html
+  http://wundermanminneapolisstaging.com/kl/BTS_intel_2016/staging_101/
+  http://wundermanminneapolisstaging.com/kl/SS_appliance_innovations_labor_day/staging_103/
+  http://wundermanminneapolisstaging.com/kl/SPRING_FITNESS/wk4_staging_102/
+  http://kmation.com/zeusjones/purina/28_day_challenege_2016/staging_100/
+  http://kmation.com/zeusjones/purina/ONE_CAT_WBH_refresh/staging_100/
+  http://kmation.com/zeusjones/purina/PURI_PURINAONECAT_TSB/staging_100/
+  http://kmation.com/GMI/OEP_GAMEDAY_2015_H5/
+  http://kmation.com/omlet/pokemon/XY20/master_106/XY20_StandardBanner_TimeTunnel_300x250.html
+  http://kmation.com/omlet/pokemon/SteamSiege/master_103/XY11_StandardBanner_steamSeige_300x250.html
+  http://kmation.com/six_speed/jan_promo_slingshot/master_101/PSS8059_Jan_PromoBanner_300x250/PSS8059_Jan_PromoBanner_300x250.html
+Sochin Kim:
+  Oh very nice. Thank you!
+

@@ -1,32 +1,28 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Create New Ad</h1>
-<%= form_for [@campaign, @ad ], html: { multipart: true } do |f| %>
-<% if @ad.errors.any? %>
-<div class="error_message">
-  <h2>Form is invalid</h2>
-  <ul>
-    <% for message in @ad.errors.full_messages %>
-      <li><%= message %></li>
+<div class="container-fluid">
+  <h1>Create New Ad</h1>
+    <%= bootstrap_form_for [@campaign, @ad ], html: { multipart: true } do |f| %>
+    <% if @ad.errors.any? %>
+      <div class="error_message">
+      <h2>Form is invalid</h2>
+        <ul>
+        <% for message in @ad.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
-  </ul>
-</div>
-<% end %>
+    <div class="field">
+    <%= f. text_field :html_file %>
+    </div>
+    <div class="field">
+    <%= f.text_field :width %>
+    </div>
+    <div class="field">
+    <%= f.text_field :height %>
+    </div>
 
-<div class="field">
-  <%= f. label :html_file %>
-  <%= f. text_field :html_file %>
-</div>
-<div class="field">
-  <%= f.label :width %>
-  <%= f.text_field :width %>
-</div>
+    <div class="action"><%= f.submit %></div>
 
-<div class="field">
-  <%= f.label :height %>
-  <%= f.text_field :height %>
+    <% end %>
 </div>
-
-<div class="action"><%= f.submit %></div>
-
-<% end %>

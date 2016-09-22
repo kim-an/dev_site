@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container-fluid">
 <h1>Edit Ad</h1>
 <%= form_for [@campaign, @ad ], html: { multipart: true } do |f| %>
 <% if @ad.errors.any? %>
@@ -30,3 +30,4 @@
 <div class="action"><%= f.submit %></div>
 
 <% end %>
+</div>

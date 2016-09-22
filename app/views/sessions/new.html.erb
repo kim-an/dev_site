@@ -1,6 +1,7 @@
 <p id='alert'><%= alert %></p>
 
-<div class="container">
+<div class="form-group">
+<div class="container" id="login">
   <div class="login" align="center">
     <h2>Log In</h2>
     <%= form_tag sessions_path do %>
@@ -9,13 +10,15 @@
         <%= text_field_tag :business_name, params[:business_name] %>
       </div>
 
-      <div class="field">
+      <div class="field" id="password">
         <%= label_tag :password %>
         <%= password_field_tag :password %>
       </div>
 
-  <div class="action" align="center"><%= submit_tag "Log In" %></div>
+  <div id="login_button" class="action btn btn-outline-primary" align="center" >
+    <%= submit_tag "Log In" %></div>
 
   <% end %>
   </div>
+</div>
 </div>

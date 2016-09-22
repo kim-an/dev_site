@@ -1,35 +1,46 @@
-<h2><%= @campaign.campaign_name %></h2>
-<p><%= @campaign.launch_date %></p>
+<div class="container-fluid">
+  <h2><%= @campaign.campaign_name %></h2>
+  <p><%= @campaign.launch_date %></p>
 
-<%= link_to "Create Ad", new_campaign_ad_path(@campaign) %><br>
-
-<div class="container">
-  <div class="row-fluid">
-    <div class="col-sm-4">
-      Html File
-    </div>
-    <div class="col-sm-4">
-      Size
-    </div>
-    <div class="col-sm-4">Tools</div>
-  </div>
-<% @ads.each do |ad| %>
-  <div class="row-fluid">
-    <div class="col-sm-4">
-      <%= link_to ad.html_file, campaign_ad_path(@campaign, ad) %>
-    </div>
-    <div class="col-sm-4">
-      <%= ad.width %>x<%= ad.height %>
-    </div>
-  <% if current_user && is_agency? %>
-    <div class="col-sm-4">
-      <%= link_to "Delete", campaign_path(@campaign, ad),
-        method: :delete,
-        data: { confirm: "Are you sure you want to delete ad? "} %>
-    </div>
-  <% else %>
-  <div class="col-sm-4" colspan="6"></div>
-  </div>
-  <% end %>
+<% if current_user && is_agency? %>
+  <%= link_to "Create Ad", new_campaign_ad_path(@campaign) %><br>
+<% else %>
+  <%= link_to 'Back', campaigns_path %>
 <% end %>
+  <div class="container">
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Html Link</th>
+        <th>Size</th>
+        <th>Tools</th>
+      </tr>
+    </thead>
+  <% @ads.each do |ad| %>
+    <tbody>
+      <tr>
+        <td>
+          <%= link_to ad.html_file, campaign_ad_path(@campaign, ad) %>
+        </td>
+        <td>
+          <%= ad.width %>x<%= ad.height %>
+        </td>
+      <% if current_user && is_agency? %>
+        <td>
+          <%= link_to "Delete", campaign_path(@campaign, ad),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete ad? "} %>
+        </td>
+      <% else %>
+        <td colspan="2"></td>
+      </tr>
+    </tbody><br>
+      <% end %>
+  <% end %>
+  </table>
+  </div>
 </div>
+
+  <% if current_user && is_agency? %>
+    <br><%= link_to "Back", clients_path(@client), class: "btn-outline-primary" %>
+  <% end %>

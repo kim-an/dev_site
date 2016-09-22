@@ -1,29 +1,35 @@
+<div class="container-fluid">
 <h1>Clients</h1>
 
 <%= link_to 'Create New Client', new_client_path %>
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-4">Client</div>
-    <div class="col-sm-4">Point of Contact</div>
-    <div class="col-sm-4">Tools</div>
-  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>Point of Contact</th>
+        <th>Tools</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @clients.each do |client| %>
+      <tr>
+        <th>
+          <%= link_to client.business_name, client_path(client.id) %>
+        </th>
+        <th>
+          <%= client.point_of_contact %>
+        </th>
+        <th>
+          <%= link_to "Edit", edit_client_path(client.id) %>
+          <%= link_to "Delete", client_path(client.id), method: :delete,
+          data: {confirm: " Are you sure you want to delete #{client.business_name}?"} %>
+        </th>
+      </tr>
+    </tbody>
+      <% end %>
+  </table>
+
+
 </div>
-<% @clients.each do |client| %>
-  <div class="row">
-    <div class="col-sm-4">
-      <%= link_to client.business_name, client_path(client.id) %>
-    </div>
-    <div class="col-sm-4">
-      <%= client.point_of_contact %>
-    </div>
-    <div class="col-sm-4">
-      <%= link_to "Edit", edit_client_path(client.id) %>
-      <%= link_to "Delete", client_path(client.id), method: :delete,
-     data: {confirm: " Are you sure you want to delete #{client.business_name}?"} %>
-    </div>
-  </div>
-
-<% end %>
-
-
