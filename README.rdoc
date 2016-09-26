@@ -1,10 +1,10 @@
 
 ##Project 2 Using Ruby on Rails
-========================================================================
+----------------------------------------------------------------------
 * Rails version:             4.2.7
 * Ruby version:              2.2.3-p173 (x86_64-darwin14)
 * RubyGems version:          2.4.5.1
-
+----------------------------------------------------------------------
 This web app was designed for a digitial ad agency to present their
 work to their different clients.
 
@@ -18,6 +18,7 @@ iFrame tag.
 The agency will be able to log in, create new clients, add campaigns
 to each client and upload advertisements done for each campaign.
 
+-----------------------------------------------------------------------
 
 Future want to haves:
 * client will be able to approve/request changes to ads
@@ -29,6 +30,10 @@ Future want to haves:
 Bugs:
 * sometimes launch date of a campaign doesn't save
 
+-----------------------------------------------------------------------
+
+[Trello Board] (https://trello.com/b/s6JQCCai/project-2-dev-site)
+[Heroku] (https://dev--site-v1.herokuapp.com/welcome/index)
 
 
 
@@ -47,6 +52,6 @@ Bugs:
   http://kmation.com/omlet/pokemon/XY20/master_106/XY20_StandardBanner_TimeTunnel_300x250.html
   http://kmation.com/omlet/pokemon/SteamSiege/master_103/XY11_StandardBanner_steamSeige_300x250.html
   http://kmation.com/six_speed/jan_promo_slingshot/master_101/PSS8059_Jan_PromoBanner_300x250/PSS8059_Jan_PromoBanner_300x250.html
-Sochin Kim:
-  Oh very nice. Thank you!
+
+
 
