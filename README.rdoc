@@ -1,5 +1,4 @@
-
-##Project 2 Using Ruby on Rails
+#Project 2 Using Ruby on Rails
 ----------------------------------------------------------------------
 * Rails version:             4.2.7
 * Ruby version:              2.2.3-p173 (x86_64-darwin14)
@@ -36,22 +35,6 @@ Bugs:
 [Heroku] (https://dev--site-v1.herokuapp.com/welcome/index)
 
 
-
-////////////links for demo///////////
-  http://40kstudios.com/clients/SixSpeed/POL8350/staging_101/
-  http://40kstudios.com/clients/WalltoWall/OUT3667/staging_101/index.html
-  http://40kstudios.com/clients/WalltoWall/OUT_3645_Kamaaina/staging_101/index.html
-  http://40kstudios.com/clients/WalltoWall/OUT_3645_Global/staging_101/index.html
-  http://wundermanminneapolisstaging.com/kl/BTS_intel_2016/staging_101/
-  http://wundermanminneapolisstaging.com/kl/SS_appliance_innovations_labor_day/staging_103/
-  http://wundermanminneapolisstaging.com/kl/SPRING_FITNESS/wk4_staging_102/
-  http://kmation.com/zeusjones/purina/28_day_challenege_2016/staging_100/
-  http://kmation.com/zeusjones/purina/ONE_CAT_WBH_refresh/staging_100/
-  http://kmation.com/zeusjones/purina/PURI_PURINAONECAT_TSB/staging_100/
-  http://kmation.com/GMI/OEP_GAMEDAY_2015_H5/
-  http://kmation.com/omlet/pokemon/XY20/master_106/XY20_StandardBanner_TimeTunnel_300x250.html
-  http://kmation.com/omlet/pokemon/SteamSiege/master_103/XY11_StandardBanner_steamSeige_300x250.html
-  http://kmation.com/six_speed/jan_promo_slingshot/master_101/PSS8059_Jan_PromoBanner_300x250/PSS8059_Jan_PromoBanner_300x250.html
 
 
 
